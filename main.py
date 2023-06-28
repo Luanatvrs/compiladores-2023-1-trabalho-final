@@ -1,6 +1,7 @@
 import logging
 from enum import Enum
 import re
+import sys
 
 class TokenClass(Enum):
     CONST_TRUE = 1
@@ -107,7 +108,6 @@ class Lexer:
                 token_class = TokenClass[match.lastgroup]
                 value = match.group()
                 tokens.append(Token(token_class, value))
-                lista_de_token.append(value)           
 
         tokens.append(Token(TokenClass.END_OF_FILE, ""))
         return tokens
@@ -467,6 +467,7 @@ class SyntaxAnalyzer:
         if self.current_token.token_class in classes_token:
             current_token_index = self.lexer.index(self.current_token)
             next_token_index = current_token_index + 1
+            lista_de_token.append(self.current_token.value)           
             self.current_token = self.lexer[next_token_index] if next_token_index < len(self.lexer) else None
             print("\nToken: ", self.current_token, "\n")
             token = self.current_token
@@ -705,19 +706,13 @@ def main():
     logging.basicConfig(level=logging.INFO)
 
     text =  """ 
-// Programa de exemplo 4
-var x = true;
-var y = 100;
-
-if(10 > y or x) {
-  print "1";
-} else {
-  if(10 < y and !x) {
-    print "2";
-  } else {
-    print "3";
-  }
+// Programa de exemplo 3
+fun printSum(a, b) {
+  print a + b;
 }
+
+printSum(10, 15);
+
 """
 
     lexer = Lexer(text)
