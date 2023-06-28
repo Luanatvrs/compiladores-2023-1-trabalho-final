@@ -1,8 +1,9 @@
 # Trabalho: Tradutor de Linguagem
 
 Nome dos alunos e números de matrícula:
-* Aluno: ___________________________
-* Aluno: ___________________________
+
+* Aluno: Luana Lorena de Matos Tavaraes
+* Aluno: Carlos Eduardo Viana Lima
 * Disciplina: Compiladores
 * Semestre: 2023/1
 * Data de entrega: 28/06/2023
@@ -24,7 +25,7 @@ O presente trabalho consiste da construção de um tradutor de código da lingua
 
 Utilize como base o código do trabalho do analisador sintático.
 
-Existem alguns códigos de exemplo no arquivo ```exemplos.md```
+Existem alguns códigos de exemplo no arquivo ``exemplos.md``
 
 ## Tópicos de avaliação
 
